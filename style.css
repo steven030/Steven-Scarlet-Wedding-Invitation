@@ -505,11 +505,33 @@ footer h3{
         grid-template-columns:1fr;
     }
 
-    /* GALERÍA */
+    /* ==================== GALERÍA MÓVIL ==================== */
+
+
     .grid-galeria{
-        grid-template-columns:repeat(2,1fr);
-        gap:10px;
+        display:flex;
+        gap:15px;
+        overflow-x:auto;
+        scroll-snap-type:x mandatory;
+        padding:10px 5px 20px;
+        scrollbar-width:none;
+        -ms-overflow-style:none;
     }
+
+    .grid-galeria::-webkit-scrollbar{
+        display:none;
+    }
+
+    .grid-galeria img{
+        flex:0 0 85%;
+        width:85%;
+        height:450px;
+        object-fit:cover;
+        border-radius:14px;
+        scroll-snap-align:center;
+    }
+
+
 
     /* MAPA */
     .mapa iframe{

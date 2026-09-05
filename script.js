@@ -80,6 +80,36 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 });
 
 
+/* ==================== GALERÍA AUTOMÁTICA ==================== */
+
+document.addEventListener("DOMContentLoaded", function () {
+
+    const galeria = document.querySelector(".grid-galeria");
+    const fotos = document.querySelectorAll(".grid-galeria img");
+
+    if (!galeria || fotos.length === 0) {
+        return;
+    }
+
+    let indice = 0;
+
+    setInterval(function () {
+
+        indice++;
+
+        if (indice >= fotos.length) {
+            indice = 0;
+        }
+
+        galeria.scrollTo({
+            left: fotos[indice].offsetLeft - galeria.offsetLeft,
+            behavior: "smooth"
+        });
+
+    }, 4500);
+
+});
+
 /* ==================== ANIMACIÓN DE ENTRADA ==================== */
 
 window.addEventListener("load", () => {
@@ -109,3 +139,5 @@ window.addEventListener("scroll", () => {
     }
 
 });
+
+
