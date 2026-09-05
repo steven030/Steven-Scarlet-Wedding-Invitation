@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Scarlet & Steven | Nuestra Boda</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+<div id="introOverlay"></div>
+<!-- ==================== NAV ==================== -->
+<header>
+    <nav class="navbar">
+        <div class="logo">S & S</div>
+
+        <ul>
+            <li><a href="#inicio">Inicio</a></li>
+            <li><a href="#historia">Historia</a></li>
+            <li><a href="#contador">Cuenta Regresiva</a></li>
+            <li><a href="#detalles">Detalles</a></li>
+            <li><a href="#galeria">Galería</a></li>
+            <li><a href="#ubicacion">Ubicación</a></li>
+            <li><a href="#confirmacion">RSVP</a></li>
+        </ul>
+    </nav>
+</header>
+
+<main>
+
+<!-- ==================== HERO ==================== -->
+<section class="hero" id="inicio">
+
+    <div class="overlay"></div>
+
+    <div class="hero-content">
+
+        <p class="small-title">
+            Con la bendición de Dios y nuestras familias
+        </p>
+
+        <h1>
+            Scarlet <span>&</span> Steven
+        </h1>
+
+        <p class="fecha">
+            29 de Noviembre de 2026
+        </p>
+
+        <p class="frase">
+            "Dos almas, un mismo destino."
+        </p>
+
+        <a href="#historia" class="boton">
+            Descubrir nuestra historia
+        </a>
+
+    </div>
+
+</section>
+
+<!-- ==================== DECORACIÓN ==================== -->
+<section class="decoracion">
+       <img src="img/floral.png"
+         alt="Separador decorativo"
+         class="separador">
+</section>
+
+<!-- ==================== HISTORIA ==================== -->
+<section class="historia" id="historia">
+
+    <div class="titulo-seccion">
+        <h2>Nuestra Historia</h2>
+        <p>Todo comenzó con una casualidad que terminó convirtiéndose en el amor de nuestras vidas.</p>
+    </div>
+
+    <div class="historia-grid">
+
+        <div class="foto">
+            <img src="img/pareja1.jpg" alt="Pareja">
+        </div>
+
+        <div class="texto">
+            <h3>El primer encuentro</h3>
+
+            <p>
+                Hay momentos que parecen simples coincidencias, pero con el tiempo descubrimos que eran el inicio de un camino extraordinario.
+            </p>
+
+            <p>
+                Cada conversación, cada sonrisa y cada aventura fueron construyendo una historia llena de recuerdos inolvidables.
+            </p>
+
+            <p>
+                Hoy queremos celebrar ese amor junto a las personas que más queremos.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================== FRASE ==================== -->
+<section class="quote">
+    <h2>"Y sobre todas estas cosas vestíos de amor, que es el vínculo perfecto."</h2>
+    <p>Colosenses 3:14</p>
+</section>
+
+<!-- ==================== CONTADOR ==================== -->
+<section class="contador" id="contador">
+
+    <h2>Faltan...</h2>
+    <p>Para el día más importante de nuestras vidas</p>
+
+    <div class="countdown">
+
+        <div class="time">
+            <h3 id="dias">00</h3>
+            <span>Días</span>
+        </div>
+
+        <div class="time">
+            <h3 id="horas">00</h3>
+            <span>Horas</span>
+        </div>
+
+        <div class="time">
+            <h3 id="minutos">00</h3>
+            <span>Minutos</span>
+        </div>
+
+        <div class="time">
+            <h3 id="segundos">00</h3>
+            <span>Segundos</span>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================== DETALLES ==================== -->
+<section class="detalles" id="detalles">
+
+    <div class="titulo-seccion">
+        <h2>Detalles del Evento</h2>
+        <p>Con mucha alegría te compartimos la información</p>
+    </div>
+
+    <div class="detalles-grid">
+
+        <div class="card-detalle">
+            <h3>📅 Ceremonia</h3>
+            <p><strong>Fecha:</strong> 29 Noviembre 2026</p>
+            <p><strong>Hora:</strong> 7:00 PM</p>
+            <p><strong>Lugar:</strong> Salón Vista Marina</p>
+        </div>
+
+        <div class="card-detalle">
+            <h3>🥂 Recepción</h3>
+            <p><strong>Hora:</strong> 6:00 PM</p>
+            <p><strong>Lugar:</strong> Salón Principal</p>
+        </div>
+
+        <div class="card-detalle">
+            <h3>👔 Vestimenta</h3>
+            <p>Formal elegante</p>
+            <p>Colores neutros</p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ==================== CRONOGRAMA ==================== -->
+<section class="cronograma">
+
+    <div class="titulo-seccion">
+        <h2>Cronograma</h2>
+        <p>Así será nuestro día especial</p>
+    </div>
+
+    <div class="timeline">
+
+        <div class="evento"><span>7:00 PM</span> Ceremonia</div>
+        <div class="evento"><span>7:30 PM</span> Brindis</div>
+        <div class="evento"><span>8:00 PM</span> Cena y fiesta</div>
+
+    </div>
+
+</section>
+
+<!-- ==================== GALERÍA ==================== -->
+<section class="galeria" id="galeria">
+
+    <div class="titulo-seccion">
+        <h2>Nuestra Galería</h2>
+        <p>Momentos que construyeron nuestra historia</p>
+    </div>
+
+    <div class="grid-galeria">
+        <img src="img/pareja1.jpg">
+        <img src="img/pareja2.jpg">
+        <img src="img/pareja3.jpg">
+        <img src="img/pareja4.jpg">
+    </div>
+
+</section>
+
+<!-- ==================== UBICACIÓN ==================== -->
+<section class="ubicacion" id="ubicacion">
+
+    <div class="titulo-seccion">
+        <h2>Ubicación</h2>
+        <p>Salón Vista Marina</p>
+    </div>
+
+    <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3784.329721529875!2d-69.84883642412355!3d18.468718182614804!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8eaf87ef0ca1ae39%3A0xa3a975754ff7af81!2sSalon%20De%20Eventos%20Vista%20Marina!5e0!3m2!1ses-419!2sdo!4v1782696223209!5m2!1ses-419!2sdo"
+  width="100%"
+  height="350"
+  style="border:0;"
+  loading="lazy"
+  referrerpolicy="strict-origin-when-cross-origin"
+  allowfullscreen>
+</iframe>
+    <a href="https://www.google.com/maps/place/Salon+De+Eventos+Vista+Marina/@18.4687182,-69.8488364,17z/data=!3m1!4b1!4m6!3m5!1s0x8eaf87ef0ca1ae39:0xa3a975754ff7af81!8m2!3d18.4687182!4d-69.8462615!16s%2Fg%2F11fxb07mgp?entry=ttu&g_ep=EgoyMDI2MDYyNC4wIKXMDSoASAFQAw%3D%3D" class="boton-mapa" target="_blank">
+        Cómo llegar
+    </a>
+
+</section>
+
+<!-- ==================== RSVP ==================== -->
+<section class="rsvp" id="confirmacion">
+
+    <div class="titulo-seccion">
+        <h2>Confirmación</h2>
+        <p>Nos encantaría verte ese día</p>
+    </div>
+
+    <form class="form-rsvp" onsubmit="enviarWhatsApp(event)">
+
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="number" id="acompanantes" placeholder="Acompañantes" required>
+        <textarea id="mensaje" placeholder="Mensaje"></textarea>
+        <p>Invitados de la Novia o del Novio?</p>
+        <div class="switch-wrapper">
+        <label class="switch">
+            <input type="checkbox" id="lado">
+            <span class="slider">
+            <span class="text novia">Novia</span>
+            <span class="text novio">Novio</span>
+            </span>
+        </label>
+        </div>
+        <button type="submit">Confirmar por WhatsApp</button>
+
+    </form>
+
+</section>
+
+<!-- ==================== REGALOS ==================== -->
+<section class="regalos">
+
+    <div class="titulo-seccion">
+        <h2>Mesa de Regalos</h2>
+    </div>
+
+    <div class="tarjetas-regalos">
+
+        <div class="regalo">
+            <h3>Detalles</h3>
+            <p>Si deseas acompañarnos con un obsequio, lo recibiremos con mucho cariño</p>
+        </div>
+
+    </div>
+
+</section>
+
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+    <h3>Scarlet & Steven</h3>
+    <p>29 Noviembre 2026</p>
+    <span>Hecho con amor 💚</span>
+</footer>
+
+<!-- ==================== SCRIPT ==================== -->
+<script>
+function enviarWhatsApp(e){
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre").value;
+    let acom = document.getElementById("acompanantes").value;
+    let msg = document.getElementById("mensaje").value;
+
+    let esNovio = document.getElementById("lado").checked;
+
+    let numeroNovia = "18295022069";
+    let numeroNovio = "18292861414";
+
+    let numero = esNovio ? numeroNovio : numeroNovia;
+
+    let texto = `Confirmación de Asistencia
+
+    Nombre: ${nombre}
+    Acompañantes: ${acom}
+    Mensaje:
+    ${msg}
+
+    Gracias por la invitación.`;
+
+    // Codificamos el texto completo
+    let url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+    // Abrimos el link
+    window.open(url, '_blank');
+}
+</script>
+</body>
+</html>
