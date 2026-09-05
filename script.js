@@ -30,7 +30,7 @@ actualizarContador();
 
 
 /* ==================== RSVP WHATSAPP ==================== */
-
+/*
 function enviarWhatsApp(event) {
 
     event.preventDefault();
@@ -58,7 +58,7 @@ Mensaje: ${mensaje || "Sin mensaje"}
 
     window.open(url, "_blank");
 }
-
+*/
 
 /* ==================== SCROLL SUAVE EXTRA ==================== */
 
