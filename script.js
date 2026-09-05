@@ -30,35 +30,36 @@ actualizarContador();
 
 
 /* ==================== RSVP WHATSAPP ==================== */
-/*
-function enviarWhatsApp(event) {
 
-    event.preventDefault();
+function enviarWhatsApp(e){
+    e.preventDefault();
 
-    const nombre = document.getElementById("nombre").value.trim();
-    const acompanantes = document.getElementById("acompanantes").value.trim();
-    const mensaje = document.getElementById("mensaje").value.trim();
+    let nombre = document.getElementById("nombre").value;
+    let acom = document.getElementById("acompanantes").value;
+    let msg = document.getElementById("mensaje").value;
 
-    if (!nombre || acompanantes === "") {
-        alert("Por favor completa los campos obligatorios 💚");
-        return;
-    }
+    let esNovio = document.getElementById("lado").checked;
 
-    const texto = `
-💍 Confirmación de Boda
+    let numeroNovia = "18295022069";
+    let numeroNovio = "18292861414";
 
-Nombre: ${nombre}
-Acompañantes: ${acompanantes}
-Mensaje: ${mensaje || "Sin mensaje"}
-    `;
+    let numero = esNovio ? numeroNovio : numeroNovia;
 
-    const numero = "18290000000"; // 👈 cambia aquí tu número real
+    let texto = `Confirmación de Asistencia
 
-    const url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+    Nombre: ${nombre}
+    Acompañantes: ${acom}
+    Mensaje:
+    ${msg}
 
-    window.open(url, "_blank");
+    Gracias por la invitación.`;
+
+    // Codificamos el texto completo
+    let url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+    // Abrimos el link
+    window.open(url, '_blank');
 }
-*/
 
 /* ==================== SCROLL SUAVE EXTRA ==================== */
 
