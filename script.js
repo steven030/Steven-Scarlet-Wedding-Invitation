@@ -86,14 +86,30 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 document.addEventListener("DOMContentLoaded", function () {
 
     const galeria = document.querySelector(".grid-galeria");
-    const fotos = document.querySelectorAll(".grid-galeria img");
 
-    if (!galeria || fotos.length === 0) {
+    if (!galeria) {
         return;
     }
 
+    const ruta = "img/Nuestra%20Historia/";
+    const totalFotos = 39;
+
+    // Generar automáticamente las imágenes
+    for (let i = 1; i <= totalFotos; i++) {
+
+        const imagen = document.createElement("img");
+
+        imagen.src = `${ruta}Galery_NH_${i}.jpeg`;
+        imagen.alt = `Nuestra historia ${i}`;
+
+        galeria.appendChild(imagen);
+    }
+
+    const fotos = galeria.querySelectorAll("img");
+
     let indice = 0;
 
+    // Cambio automático cada 4.5 segundos
     setInterval(function () {
 
         indice++;
@@ -141,4 +157,23 @@ window.addEventListener("scroll", () => {
 
 });
 
+// ==================== CARRUSEL INFINITO DE GALERÍA ====================
+document.addEventListener("DOMContentLoaded", () => {
+    const totalImganes = 39;
+    const track = document.getElementById('carruselTrack');
+    
+    if (track) {
+        let contenidoHTML = '';
+        
+        // Duplicamos el ciclo de 1 a 39 para lograr el efecto infinito continuo
+        for (let j = 0; j < 2; j++) {
+            for (let i = 1; i <= totalImganes; i++) {
+                // Cambia '.jpeg' por '.jpg' o '.png' según el formato real de tus fotos
+                contenidoHTML += `<img src="img/Nuestra\ Historia/Galery_NH_${i}.jpeg" alt="Galeria ${i}" onerror="this.style.display='none'">`;
+            }
+        }
+        
+        track.innerHTML = contenidoHTML;
+    }
+});
 
