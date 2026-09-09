@@ -411,19 +411,43 @@ section{
 }
 
 /* ==================== REGALOS ==================== */
+/* ==================== REGALOS ==================== */
 .tarjetas-regalos{
     display: flex;
     gap: 20px;
     justify-content: center;
     flex-wrap: wrap;
+    max-width: 600px;
+    margin: 0 auto;
 }
 
 .regalo{
     background: white;
-    padding: 20px;
+    padding: 30px;
     border-radius: 16px;
-    width: 260px;
+    width: 100%;
+    text-align: center;
     box-shadow: 0 15px 30px rgba(0,0,0,0.08);
+    border-top: 3px solid var(--dorado);
+    transition: 0.3s;
+}
+
+.regalo:hover{
+    transform: translateY(-5px);
+}
+
+.regalo h3{
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    color: var(--olivo);
+    margin-bottom: 12px;
+}
+
+.regalo p{
+    color: var(--texto);
+    font-size: 15px;
+    line-height: 1.6;
+    opacity: 0.9;
 }
 
 /* ==================== FOOTER ==================== */

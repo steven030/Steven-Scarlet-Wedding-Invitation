@@ -28,8 +28,8 @@ function actualizarContador() {
 setInterval(actualizarContador, 1000);
 actualizarContador();
 
-
-/* ==================== RSVP WHATSAPP ==================== */
+/*
+ ==================== RSVP WHATSAPP ==================== 
 
 function enviarWhatsApp(e){
     e.preventDefault();
@@ -60,7 +60,52 @@ function enviarWhatsApp(e){
     // Abrimos el link
     window.open(url, '_blank');
 }
+*/
+/* ==================== RSVP WHATSAPP & GOOGLE SHEETS ==================== */
 
+function enviarWhatsApp(e){
+    e.preventDefault();
+
+    let nombre = document.getElementById("nombre").value.trim();
+    let acom = document.getElementById("acompanantes").value;
+    let msg = document.getElementById("mensaje").value;
+    let esNovio = document.getElementById("lado").checked;
+
+    // 1. URL de tu Web App de Google Apps Script
+    const urlAPI = "https://script.google.com/macros/s/AKfycbwelpPX27o4XSTkUK9oG6mamv-9q4eoIWBxPSd41BryQWGwx1ro-JxN4SGjdFwrwjrPJA/exec";
+
+    // 2. Enviar los datos en segundo plano a Google Sheets para actualizar el estatus
+    fetch(urlAPI, {
+        method: "POST",
+        mode: "no-cors",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            Nombre: nombre,
+            Status: "CONFIRMADO" // Actualiza automáticamente a confirmado
+        })
+    }).catch(error => console.error("Error al actualizar la hoja:", error));
+
+    // 3. Preparar el mensaje para WhatsApp
+    let numeroNovia = "18295022069";
+    let numeroNovio = "18292861414";
+    let numero = esNovio ? numeroNovio : numeroNovia;
+
+    let texto = `Confirmación de Asistencia
+
+    Nombre: ${nombre}
+    Acompañantes: ${acom}
+    Mensaje:
+    ${msg}
+
+    Gracias por la invitación.`;
+
+    let url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
+
+    // 4. Abrir WhatsApp
+    window.open(url, '_blank');
+}
 /* ==================== SCROLL SUAVE EXTRA ==================== */
 
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
