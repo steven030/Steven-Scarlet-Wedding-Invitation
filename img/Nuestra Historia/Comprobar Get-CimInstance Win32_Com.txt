@@ -1,0 +1,1 @@
+Comprobar: Get-CimInstance Win32_ComputerSystem | Select-Object HypervisorPresent
