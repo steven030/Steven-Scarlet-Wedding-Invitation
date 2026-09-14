@@ -167,7 +167,7 @@ document.addEventListener("DOMContentLoaded", () => {
         return;
     }
 
-    const totalImagenes = 39;
+    const totalImagenes = 15;
 
     // IMPORTANTE:
     // %20 representa el espacio entre "Nuestra" y "Historia".
