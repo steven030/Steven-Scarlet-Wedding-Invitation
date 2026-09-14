@@ -334,12 +334,10 @@ section{
     align-items: center;
     animation: rotarCarrusel 100s linear infinite;
     will-change: transform;
-    transform: translate3d(0, 0, 0); /* Aceleración por hardware (GPU) */
+    transform: translate3d(0, 0, 0);
 }
 
-.carrusel-track:hover {
-    animation-play-state: paused;
-}
+/* Se eliminó la regla de .carrusel-track:hover para que no se pause */
 
 /* Cada grupo contiene las 11 imágenes */
 .carrusel-grupo {
@@ -369,7 +367,7 @@ section{
         transform 0.3s ease,
         filter 0.3s ease;
     
-    transform: translate3d(0, 0, 0); /* Suaviza el renderizado de la imagen */
+    transform: translate3d(0, 0, 0);
 }
 
 .carrusel-track img:hover {
