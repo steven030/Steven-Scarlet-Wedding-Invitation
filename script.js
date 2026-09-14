@@ -158,28 +158,27 @@ window.addEventListener("scroll", () => {
 
 
 
+
 // ==================== CARRUSEL INFINITO DE GALERÍA ====================
 document.addEventListener("DOMContentLoaded", () => {
-    const track = document.getElementById('carruselTrack');
+    const grupo1 = document.getElementById('grupo1');
+    const grupo2 = document.getElementById('grupo2');
     
-    if (track) {
+    if (grupo1 && grupo2) {
         let contenidoHTML = '';
         
-        // Rango real de tus imágenes existentes (por ejemplo, del 2 al 15)
+        // Rango real de tus imágenes disponibles (del 2 al 11, o ajústalo si empieza en otro)
         const inicio = 2;
-        const fin = 15;
+        const fin = 11;
         
-        // Duplicamos el ciclo para lograr el efecto infinito continuo
-        for (let j = 0; j < 2; j++) {
-            for (let i = inicio; i <= fin; i++) {
-                // Usamos encodeURI o la ruta limpia y mantenemos el onerror de seguridad
-                contenidoHTML += `<img src="img/Nuestra%20Historia/Galery_NH_${i}.jpg" alt="Galeria ${i}" onerror="this.style.display='none'">`;
-            }
+        for (let i = inicio; i <= fin; i++) {
+            contenidoHTML += `<img src="img/Nuestra%20Historia/Galery_NH_${i}.jpg" alt="Galeria ${i}" onerror="this.style.display='none'">`;
         }
         
-        track.innerHTML = contenidoHTML;
+        // Inyectamos el mismo contenido en ambos grupos para mantener el loop infinito del CSS
+        grupo1.innerHTML = contenidoHTML;
+        grupo2.innerHTML = contenidoHTML;
     }
 });
-
 
 
