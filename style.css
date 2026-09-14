@@ -294,51 +294,91 @@ section{
     box-shadow: 0 10px 20px rgba(0,0,0,0.05);
 }
 
+
+
 /* ==================== GALERÍA / CARRUSEL ==================== */
+
+#galeria {
+    width: 100%;
+    overflow: hidden;
+    padding-left: 0;
+    padding-right: 0;
+}
+
 .carrusel-galeria {
     width: 100%;
     overflow: hidden;
     position: relative;
     padding: 20px 0;
     background: transparent;
-    mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+
+    /* Desvanecimiento de los extremos */
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 8%,
+        black 92%,
+        transparent 100%
+    );
 }
 
 .carrusel-track {
     display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
     gap: 20px;
     width: max-content;
-    animation: rotarCarrusel 120s linear infinite;
+
+    animation: rotarCarrusel 100s linear infinite;
+
+    will-change: transform;
 }
 
 .carrusel-track:hover {
     animation-play-state: paused;
 }
 
+/* Cada imagen */
+
 .carrusel-track img {
+    display: block;
+
+    flex: 0 0 auto;
+
     width: 400px;
     height: 400px;
+
     object-fit: cover;
+
     border-radius: 16px;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+
+    box-shadow: 0 10px 25px rgba(0,0,0,0.10);
 
     /* Filtro cálido */
     filter:
-        sepia(22%)
-        saturate(112%)
-        brightness(103%)
-        contrast(96%);
+        sepia(25%)
+        saturate(110%)
+        brightness(102%)
+        contrast(95%);
 
     transition:
         transform 0.3s ease,
         filter 0.3s ease;
 }
 
-.carrusel-track img:hover {
-    transform: scale(1.05);
+/* Efecto al pasar el mouse */
 
-    /* Mantiene el tono cálido al pasar el mouse */
+.carrusel-track img:hover {
+    transform: scale(1.03);
+
     filter:
         sepia(18%)
         saturate(115%)
@@ -346,14 +386,74 @@ section{
         contrast(97%);
 }
 
+/* Movimiento */
+
 @keyframes rotarCarrusel {
-    0% {
+
+    from {
         transform: translateX(0);
     }
-    100% {
+
+    to {
         transform: translateX(calc(-50% - 10px));
     }
+
 }
+
+/* ==================== TABLET ==================== */
+
+@media (max-width: 992px) {
+
+    .carrusel-track {
+        gap: 16px;
+    }
+
+    .carrusel-track img {
+        width: 320px;
+        height: 320px;
+    }
+
+}
+
+/* ==================== MÓVIL ==================== */
+
+@media (max-width: 768px) {
+
+    .carrusel-galeria {
+        padding: 15px 0;
+    }
+
+    .carrusel-track {
+        gap: 12px;
+        animation-duration: 80s;
+    }
+
+    .carrusel-track img {
+        width: 260px;
+        height: 260px;
+        border-radius: 14px;
+    }
+
+}
+
+/* ==================== MÓVIL PEQUEÑO ==================== */
+
+@media (max-width: 480px) {
+
+    .carrusel-track {
+        gap: 10px;
+        animation-duration: 70s;
+    }
+
+    .carrusel-track img {
+        width: 220px;
+        height: 220px;
+        border-radius: 12px;
+    }
+
+}
+
+
 
 /* ==================== MAPA ==================== */
 .mapa iframe{
