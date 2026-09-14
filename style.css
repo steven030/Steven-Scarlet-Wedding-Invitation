@@ -296,7 +296,7 @@ section{
 
 
 
-/* ==================== GALERÍA / CARRUSEL ==================== */
+/* ==================== GALERÍA / CARRUSEL (Optimizado para Safari) ==================== */
 
 #galeria {
     width: 100%;
@@ -333,11 +333,16 @@ section{
     width: max-content;
     align-items: center;
     animation: rotarCarrusel 100s linear infinite;
+    
+    /* Trucos críticos para Safari */
     will-change: transform;
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    perspective: 1000;
 }
-
-/* Se eliminó la regla de .carrusel-track:hover para que no se pause */
 
 /* Cada grupo contiene las 11 imágenes */
 .carrusel-grupo {
@@ -367,10 +372,15 @@ section{
         transform 0.3s ease,
         filter 0.3s ease;
     
+    /* Aislamiento individual para evitar parpadeos en Safari */
+    -webkit-transform: translate3d(0, 0, 0);
     transform: translate3d(0, 0, 0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
 }
 
 .carrusel-track img:hover {
+    -webkit-transform: scale(1.03) translate3d(0, 0, 0);
     transform: scale(1.03) translate3d(0, 0, 0);
 
     filter:
@@ -380,14 +390,25 @@ section{
         contrast(97%);
 }
 
-/* Movimiento infinito optimizado con translate3d */
+/* Movimiento infinito con prefijos para Safari */
 @keyframes rotarCarrusel {
     from {
+        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
     }
 
     to {
+        -webkit-transform: translate3d(-50%, 0, 0);
         transform: translate3d(-50%, 0, 0);
+    }
+}
+
+@-webkit-keyframes rotarCarrusel {
+    from {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    to {
+        -webkit-transform: translate3d(-50%, 0, 0);
     }
 }
 
@@ -423,6 +444,7 @@ section{
 
     .carrusel-track {
         animation-duration: 80s;
+        -webkit-animation-duration: 80s;
         animation-play-state: running !important;
     }
 
@@ -446,6 +468,7 @@ section{
 
     .carrusel-track {
         animation-duration: 70s;
+        -webkit-animation-duration: 70s;
         animation-play-state: running !important;
     }
 
