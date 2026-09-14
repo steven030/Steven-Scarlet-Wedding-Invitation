@@ -86,7 +86,7 @@
     <div class="historia-grid">
 
         <div class="foto">
-            <img src="img/pareja1.jpg" alt="Pareja">
+            <img src="img/Nuestra Historia/Galery_NH_12.jpg" alt="Pareja">
         </div>
 
         <div class="texto">
@@ -294,7 +294,7 @@
     <form class="form-rsvp" onsubmit="enviarWhatsApp(event)">
 
         <input type="text" id="nombre" placeholder="Nombre" required>
-        <input type="number" id="acompanantes" placeholder="Acompañantes" required>
+        <!-- <input type="number" id="acompanantes" placeholder="Acompañantes" required> -->
         <textarea id="mensaje" placeholder="Mensaje"></textarea>
         <p>Invitados de la Novia o del Novio?</p>
         <div class="switch-wrapper">
@@ -330,7 +330,7 @@ function enviarWhatsApp(e){
     e.preventDefault();
 
     let nombre = document.getElementById("nombre").value;
-    let acom = document.getElementById("acompanantes").value;
+    // let acom = document.getElementById("acompanantes").value;
     let msg = document.getElementById("mensaje").value;
 
     let esNovio = document.getElementById("lado").checked;
@@ -343,7 +343,7 @@ function enviarWhatsApp(e){
     let texto = `Confirmación de Asistencia
 
     Nombre: ${nombre}
-    Acompañantes: ${acom}
+    
     Mensaje:
     ${msg}
 

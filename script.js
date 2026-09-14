@@ -67,7 +67,7 @@ function enviarWhatsApp(e){
     e.preventDefault();
 
     let nombre = document.getElementById("nombre").value.trim();
-    let acom = document.getElementById("acompanantes").value;
+    // let acom = document.getElementById("acompanantes").value;
     let msg = document.getElementById("mensaje").value;
     let esNovio = document.getElementById("lado").checked;
 
@@ -95,7 +95,6 @@ function enviarWhatsApp(e){
     let texto = `Confirmación de Asistencia
 
     Nombre: ${nombre}
-    Acompañantes: ${acom}
     Mensaje:
     ${msg}
 
@@ -144,7 +143,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
         const imagen = document.createElement("img");
 
-        imagen.src = `${ruta}Galery_NH_${i}.jpeg`;
+        imagen.src = `${ruta}Galery_NH_${i}.jpg`;
         imagen.alt = `Nuestra historia ${i}`;
 
         galeria.appendChild(imagen);
@@ -214,7 +213,7 @@ document.addEventListener("DOMContentLoaded", () => {
         for (let j = 0; j < 2; j++) {
             for (let i = 1; i <= totalImganes; i++) {
                 // Cambia '.jpeg' por '.jpg' o '.png' según el formato real de tus fotos
-                contenidoHTML += `<img src="img/Nuestra\ Historia/Galery_NH_${i}.jpeg" alt="Galeria ${i}" onerror="this.style.display='none'">`;
+                contenidoHTML += `<img src="img/Nuestra\ Historia/Galery_NH_${i}.jpg" alt="Galeria ${i}" onerror="this.style.display='none'">`;
             }
         }
         
