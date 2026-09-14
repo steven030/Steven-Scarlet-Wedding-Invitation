@@ -422,6 +422,8 @@ section{
 
     .carrusel-track {
         animation-duration: 80s;
+        animation-play-state: running !important;
+
     }
 
     .carrusel-track img {
@@ -444,6 +446,8 @@ section{
 
     .carrusel-track {
         animation-duration: 70s;
+        animation-play-state: running !important;
+
     }
 
     .carrusel-track img {
