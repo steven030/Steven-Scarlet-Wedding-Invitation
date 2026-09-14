@@ -159,52 +159,25 @@ window.addEventListener("scroll", () => {
 /* ==================== CARRUSEL INFINITO DE GALERÍA ==================== */
 
 document.addEventListener("DOMContentLoaded", () => {
+    const carruselTrack = document.getElementById("carruselTrack");
+    
+    // Lista exacta de los números o nombres de archivos que realmente tienes en tu carpeta
+    // Basado en tu captura (del 2 al 15, o los que correspondan)
+    const imagenes = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; // Ajusta o quita el número si alguno no existe
 
-    const track = document.getElementById("carruselTrack");
+    imagenes.forEach(num => {
+        const slideDiv = document.createElement("div");
+        slideDiv.classList.add("carrusel-slide");
 
-    if (!track) {
-        console.error("No se encontró el elemento #carruselTrack");
-        return;
-    }
+        const img = document.createElement("img");
+        img.src = `img/Nuestra Historia/Galery_NH_${num}.jpg`;
+        img.alt = `Momento de nuestra historia ${num}`;
+        img.loading = "lazy";
 
-    const totalImagenes = 15;
-
-    // IMPORTANTE:
-    // %20 representa el espacio entre "Nuestra" y "Historia".
-    const ruta = "img/Nuestra%20Historia/";
-
-    let contenidoHTML = "";
-
-    /*
-     * Creamos dos grupos iguales.
-     *
-     * 1 2 3 4 ... 39
-     * 1 2 3 4 ... 39
-     *
-     * Esto permite crear el efecto de desplazamiento continuo.
-     */
-
-    for (let grupo = 0; grupo < 2; grupo++) {
-
-        for (let i = 2; i <= totalImagenes; i++) {
-
-            contenidoHTML += `
-                <img
-                    src="${ruta}Galery_NH_${i}.jpg"
-                    alt="Momento de nuestra historia ${i}"
-                    
-                >
-            `;
-
-        }
-
-    }
-
-    track.innerHTML = contenidoHTML;
-
-    console.log(
-        `Carrusel cargado correctamente: ${totalImagenes * 2} imágenes`
-    );
+        slideDiv.appendChild(img);
+        carruselTrack.appendChild(slideDiv);
+    });
+});
 
 });
 
