@@ -192,7 +192,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 <img
                     src="${ruta}Galery_NH_${i}.jpg"
                     alt="Momento de nuestra historia ${i}"
-                    loading="lazy"
+                    
                 >
             `;
 
