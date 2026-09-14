@@ -310,9 +310,7 @@ section{
     overflow: hidden;
     position: relative;
     padding: 20px 0;
-    background: transparent;
 
-    /* Desvanecimiento de los extremos */
     mask-image: linear-gradient(
         to right,
         transparent 0%,
@@ -332,13 +330,9 @@ section{
 
 .carrusel-track {
     display: flex;
-    flex-wrap: nowrap;
-    align-items: center;
-    gap: 20px;
     width: max-content;
-
+    align-items: center;
     animation: rotarCarrusel 100s linear infinite;
-
     will-change: transform;
 }
 
@@ -346,23 +340,24 @@ section{
     animation-play-state: paused;
 }
 
-/* Cada imagen */
+/* Cada grupo contiene las 11 imágenes */
+.carrusel-grupo {
+    display: flex;
+    gap: 20px;
+    flex-shrink: 0;
+}
 
+/* Imágenes */
 .carrusel-track img {
     display: block;
-
-    flex: 0 0 auto;
-
+    flex: 0 0 400px;
     width: 400px;
     height: 400px;
-
     object-fit: cover;
-
     border-radius: 16px;
 
     box-shadow: 0 10px 25px rgba(0,0,0,0.10);
 
-    /* Filtro cálido */
     filter:
         sepia(25%)
         saturate(110%)
@@ -374,8 +369,6 @@ section{
         filter 0.3s ease;
 }
 
-/* Efecto al pasar el mouse */
-
 .carrusel-track img:hover {
     transform: scale(1.03);
 
@@ -386,34 +379,34 @@ section{
         contrast(97%);
 }
 
-/* Movimiento */
-
+/* Movimiento infinito */
 @keyframes rotarCarrusel {
-
     from {
         transform: translateX(0);
     }
 
     to {
-        transform: translateX(calc(-50% - 10px));
+        transform: translateX(-50%);
     }
-
 }
+
 
 /* ==================== TABLET ==================== */
 
 @media (max-width: 992px) {
 
-    .carrusel-track {
+    .carrusel-grupo {
         gap: 16px;
     }
 
     .carrusel-track img {
+        flex: 0 0 320px;
         width: 320px;
         height: 320px;
     }
 
 }
+
 
 /* ==================== MÓVIL ==================== */
 
@@ -423,12 +416,16 @@ section{
         padding: 15px 0;
     }
 
-    .carrusel-track {
+    .carrusel-grupo {
         gap: 12px;
+    }
+
+    .carrusel-track {
         animation-duration: 80s;
     }
 
     .carrusel-track img {
+        flex: 0 0 260px;
         width: 260px;
         height: 260px;
         border-radius: 14px;
@@ -436,25 +433,27 @@ section{
 
 }
 
+
 /* ==================== MÓVIL PEQUEÑO ==================== */
 
 @media (max-width: 480px) {
 
-    .carrusel-track {
+    .carrusel-grupo {
         gap: 10px;
+    }
+
+    .carrusel-track {
         animation-duration: 70s;
     }
 
     .carrusel-track img {
+        flex: 0 0 220px;
         width: 220px;
         height: 220px;
         border-radius: 12px;
     }
 
 }
-
-
-
 /* ==================== MAPA ==================== */
 .mapa iframe{
     border-radius: 16px;
@@ -510,7 +509,7 @@ section{
     transform: translateY(-2px);
 }
 
-/* ==================== REGALOS ==================== */
+
 /* ==================== REGALOS ==================== */
 .tarjetas-regalos{
     display: flex;
