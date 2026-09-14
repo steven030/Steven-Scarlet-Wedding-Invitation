@@ -172,7 +172,7 @@ document.addEventListener("DOMContentLoaded", () => {
         const fin = 15;
         
         for (let i = inicio; i <= fin; i++) {
-            contenidoHTML += `<img src="img/Nuestra%20Historia/Galery_NH_${i}.jpg" alt="Galeria ${i}"  decoding="async" onerror="this.style.display='none'">`;
+            contenidoHTML += `<img src="img/Nuestra%20Historia/Galery_NH_${i}.jpg" alt="Galeria ${i}"  decoding="async" onload="lazy" onerror="this.style.display='none'">`;
         }
         
         // Inyectamos el mismo contenido en ambos grupos para mantener el loop infinito del CSS
