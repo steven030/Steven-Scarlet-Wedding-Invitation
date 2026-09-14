@@ -169,7 +169,7 @@ document.addEventListener("DOMContentLoaded", () => {
         
         // Rango real de tus imágenes disponibles (del 2 al 11, o ajústalo si empieza en otro)
         const inicio = 2;
-        const fin = 11;
+        const fin = 15;
         
         for (let i = inicio; i <= fin; i++) {
             contenidoHTML += `<img src="img/Nuestra%20Historia/Galery_NH_${i}.jpg" alt="Galeria ${i}" onerror="this.style.display='none'">`;
