@@ -156,29 +156,29 @@ window.addEventListener("scroll", () => {
 });
 
 
-/* ==================== CARRUSEL INFINITO DE GALERÍA ==================== */
 
+
+// ==================== CARRUSEL INFINITO DE GALERÍA ====================
 document.addEventListener("DOMContentLoaded", () => {
-    const carruselTrack = document.getElementById("carruselTrack");
+    const track = document.getElementById('carruselTrack');
     
-    // Lista exacta de los números o nombres de archivos que realmente tienes en tu carpeta
-    // Basado en tu captura (del 2 al 15, o los que correspondan)
-    const imagenes = [2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]; // Ajusta o quita el número si alguno no existe
-
-    imagenes.forEach(num => {
-        const slideDiv = document.createElement("div");
-        slideDiv.classList.add("carrusel-slide");
-
-        const img = document.createElement("img");
-        img.src = `img/Nuestra Historia/Galery_NH_${num}.jpg`;
-        img.alt = `Momento de nuestra historia ${num}`;
-        img.loading = "lazy";
-
-        slideDiv.appendChild(img);
-        carruselTrack.appendChild(slideDiv);
-    });
-});
-
+    if (track) {
+        let contenidoHTML = '';
+        
+        // Rango real de tus imágenes existentes (por ejemplo, del 2 al 15)
+        const inicio = 2;
+        const fin = 15;
+        
+        // Duplicamos el ciclo para lograr el efecto infinito continuo
+        for (let j = 0; j < 2; j++) {
+            for (let i = inicio; i <= fin; i++) {
+                // Usamos encodeURI o la ruta limpia y mantenemos el onerror de seguridad
+                contenidoHTML += `<img src="img/Nuestra%20Historia/Galery_NH_${i}.jpg" alt="Galeria ${i}" onerror="this.style.display='none'">`;
+            }
+        }
+        
+        track.innerHTML = contenidoHTML;
+    }
 });
 
 
