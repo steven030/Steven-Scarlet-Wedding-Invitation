@@ -186,7 +186,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let grupo = 0; grupo < 2; grupo++) {
 
-        for (let i = 1; i <= totalImagenes; i++) {
+        for (let i = 2; i <= totalImagenes; i++) {
 
             contenidoHTML += `
                 <img
