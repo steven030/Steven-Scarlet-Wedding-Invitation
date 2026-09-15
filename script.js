@@ -65,8 +65,11 @@ function enviarWhatsApp(e){
 
 function capitalizarNombre(texto) {
     return texto
-        .toLowerCase()
-        .replace(/\b\w/g, letra => letra.toUpperCase());
+        .toLocaleLowerCase('es-ES')
+        .trim()
+        .split(/\s+/)
+        .map(palabra => palabra.charAt(0).toLocaleUpperCase('es-ES') + palabra.slice(1))
+        .join(' ');
 }
 
 function enviarWhatsApp(e){
