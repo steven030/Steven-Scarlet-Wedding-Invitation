@@ -63,10 +63,18 @@ function enviarWhatsApp(e){
 */
 /* ==================== RSVP WHATSAPP & GOOGLE SHEETS ==================== */
 
+function capitalizarNombre(texto) {
+    return texto
+        .toLowerCase()
+        .replace(/\b\w/g, letra => letra.toUpperCase());
+}
+
 function enviarWhatsApp(e){
     e.preventDefault();
 
     let nombre = document.getElementById("nombre").value.trim();
+    nombre = capitalizarNombre(nombre);
+
     // let acom = document.getElementById("acompanantes").value;
     let msg = document.getElementById("mensaje").value;
     let esNovio = document.getElementById("lado").checked;
@@ -83,7 +91,7 @@ function enviarWhatsApp(e){
         },
         body: JSON.stringify({
             Nombre: nombre,
-            Status: "CONFIRMADO" // Actualiza automáticamente a confirmado
+            Status: "CONFIRMADO"
         })
     }).catch(error => console.error("Error al actualizar la hoja:", error));
 
@@ -94,11 +102,11 @@ function enviarWhatsApp(e){
 
     let texto = `Confirmación de Asistencia
 
-    Nombre: ${nombre}
-    Mensaje:
-    ${msg}
+Nombre: ${nombre}
+Mensaje:
+${msg}
 
-    Gracias por la invitación.`;
+Gracias por la invitación.`;
 
     let url = `https://wa.me/${numero}?text=${encodeURIComponent(texto)}`;
 
